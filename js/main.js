@@ -268,7 +268,7 @@ var galleryImageCounts = {
     'four-seasons-superfine': 9,
     'wool-silk-linen': 9,
     'high-twist-stretch': 7,
-    'wool-poly': 47,
+    'wool-poly': 45,
     'business': 0
 };
 
