@@ -287,6 +287,21 @@ h1, h2, h3, h4, h5 {
     font-weight: 400;
 }
 
+.hero-logo {
+    width: min(320px, 60vw);
+    height: auto;
+    opacity: 0.75;
+    margin-bottom: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: opacity 0.4s ease;
+}
+
+.hero-logo:hover {
+    opacity: 0.95;
+}
+
 .hero-title {
     font-family: 'Champignon', var(--font-heading);
     font-size: clamp(5rem, 9vw, 7rem);
