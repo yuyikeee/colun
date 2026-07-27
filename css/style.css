@@ -498,6 +498,11 @@ h1, h2, h3, h4, h5 {
     border-color: #b8956a;
 }
 
+.product-badge.badge-new {
+    color: #c97a5e;
+    border-color: #c97a5e;
+}
+
 .product-name {
     font-size: 1.5rem;
     color: var(--white);
@@ -549,6 +554,37 @@ h1, h2, h3, h4, h5 {
     font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.8;
+    font-weight: 300;
+}
+
+/* Product features list */
+.product-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.feature-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.feature-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+}
+
+.feature-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
     font-weight: 300;
 }
 

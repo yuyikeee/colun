@@ -239,6 +239,13 @@ var galleryData = {
         subGalleries: [
             { id: 'biz', label: 'All Fabrics', dir: 'business' }
         ]
+    },
+    'classic-blend': {
+        title: '归璞·Prima — Fabric Gallery',
+        tabs: false,
+        subGalleries: [
+            { id: 'cb', label: 'All Fabrics', dir: 'classic-blend' }
+        ]
     }
 };
 
@@ -269,7 +276,8 @@ var galleryImageCounts = {
     'wool-silk-linen': 9,
     'high-twist-stretch': 7,
     'wool-poly': 45,
-    'business': 0
+    'business': 0,
+    'classic-blend': 47
 };
 
 // --- Open Gallery -------------------------------------------
