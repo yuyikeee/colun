@@ -88,14 +88,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Contact Form Handling -------------------------------
     contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Simple validation
+        // Simple validation before letting the form submit
         var name = document.getElementById('name').value.trim();
         var email = document.getElementById('email').value.trim();
         var message = document.getElementById('message').value.trim();
 
         if (!name || !email || !message) {
+            e.preventDefault();
             contactForm.style.animation = 'none';
             contactForm.offsetHeight;
             contactForm.style.animation = 'shake 0.5s ease';
@@ -105,44 +104,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // Email format check
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
+            e.preventDefault();
             document.getElementById('email').style.borderColor = '#c94e4e';
             setTimeout(function () {
                 document.getElementById('email').style.borderColor = '';
             }, 2000);
             return;
         }
-
-        // Submit to Formspree via AJAX
-        var submitBtn = contactForm.querySelector('button[type="submit"]');
-        var originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-
-        fetch(contactForm.action, {
-            method: 'POST',
-            body: new FormData(contactForm),
-            headers: { 'Accept': 'application/json' }
-        })
-        .then(function (response) {
-            return response.json().then(function (data) {
-                if (data.success) {
-                    contactForm.reset();
-                    formSuccess.style.display = 'block';
-                    setTimeout(function () {
-                        formSuccess.style.display = 'none';
-                    }, 6000);
-                } else {
-                    alert('Sorry, something went wrong. Please try again or email us directly.');
-                }
-            });
-        })
-        .catch(function () {
-            alert('Network error. Please try again or email us directly.');
-        })
-        .finally(function () {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        });
+        // Form submits naturally to web3forms
     });
 
     // Clear email error on input
