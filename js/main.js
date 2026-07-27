@@ -96,9 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var message = document.getElementById('message').value.trim();
 
         if (!name || !email || !message) {
-            // Shake the form gently
             contactForm.style.animation = 'none';
-            contactForm.offsetHeight; // trigger reflow
+            contactForm.offsetHeight;
             contactForm.style.animation = 'shake 0.5s ease';
             return;
         }
@@ -113,15 +112,35 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // In a production site, you'd send this to a backend.
-        // For the static demo, show a success message.
-        contactForm.reset();
-        formSuccess.style.display = 'block';
+        // Submit to Formspree via AJAX
+        var submitBtn = contactForm.querySelector('button[type="submit"]');
+        var originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
 
-        // Hide success message after 6 seconds
-        setTimeout(function () {
-            formSuccess.style.display = 'none';
-        }, 6000);
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(function (response) {
+            if (response.ok) {
+                contactForm.reset();
+                formSuccess.style.display = 'block';
+                setTimeout(function () {
+                    formSuccess.style.display = 'none';
+                }, 6000);
+            } else {
+                alert('Sorry, something went wrong. Please try again or email us directly.');
+            }
+        })
+        .catch(function () {
+            alert('Network error. Please try again or email us directly.');
+        })
+        .finally(function () {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
     });
 
     // Clear email error on input
