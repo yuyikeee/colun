@@ -88,30 +88,54 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Contact Form Handling -------------------------------
     contactForm.addEventListener('submit', function (e) {
-        // Simple validation before letting the form submit
+        e.preventDefault();
+
         var name = document.getElementById('name').value.trim();
         var email = document.getElementById('email').value.trim();
         var message = document.getElementById('message').value.trim();
 
         if (!name || !email || !message) {
-            e.preventDefault();
             contactForm.style.animation = 'none';
             contactForm.offsetHeight;
             contactForm.style.animation = 'shake 0.5s ease';
             return;
         }
 
-        // Email format check
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            e.preventDefault();
             document.getElementById('email').style.borderColor = '#c94e4e';
             setTimeout(function () {
                 document.getElementById('email').style.borderColor = '';
             }, 2000);
             return;
         }
-        // Form submits naturally to web3forms
+
+        var submitBtn = contactForm.querySelector('button[type="submit"]');
+        var originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm)
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+            if (data.success) {
+                contactForm.reset();
+                formSuccess.style.display = 'block';
+                setTimeout(function () { formSuccess.style.display = 'none'; }, 6000);
+            } else {
+                alert('Something went wrong. Please email us directly.');
+            }
+        })
+        .catch(function () {
+            alert('Network error. Please email us directly at yuyikeee@gmail.com');
+        })
+        .finally(function () {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
     });
 
     // Clear email error on input
