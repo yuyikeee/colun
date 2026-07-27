@@ -124,15 +124,17 @@ document.addEventListener('DOMContentLoaded', function () {
             headers: { 'Accept': 'application/json' }
         })
         .then(function (response) {
-            if (response.ok) {
-                contactForm.reset();
-                formSuccess.style.display = 'block';
-                setTimeout(function () {
-                    formSuccess.style.display = 'none';
-                }, 6000);
-            } else {
-                alert('Sorry, something went wrong. Please try again or email us directly.');
-            }
+            return response.json().then(function (data) {
+                if (data.success) {
+                    contactForm.reset();
+                    formSuccess.style.display = 'block';
+                    setTimeout(function () {
+                        formSuccess.style.display = 'none';
+                    }, 6000);
+                } else {
+                    alert('Sorry, something went wrong. Please try again or email us directly.');
+                }
+            });
         })
         .catch(function () {
             alert('Network error. Please try again or email us directly.');
