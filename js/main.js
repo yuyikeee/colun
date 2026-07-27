@@ -241,7 +241,7 @@ var galleryData = {
         ]
     },
     'classic-blend': {
-        title: '归璞·Prima — Fabric Gallery',
+        title: '霓裳·Irida — Fabric Gallery',
         tabs: false,
         subGalleries: [
             { id: 'cb', label: 'All Fabrics', dir: 'classic-blend' }
