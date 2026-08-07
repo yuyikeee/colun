@@ -766,11 +766,25 @@ h1, h2, h3, h4, h5 {
 /* --- Photo Grid (Factory & Garment) --------------------- */
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    min-height: 200px;
 }
 
+.photo-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    transition: transform var(--transition), border-color var(--transition);
+    cursor: pointer;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.02);
+    border-color: var(--gold);
+}
+
+/* ---- Placeholder (fallback when no images) ---- */
 .photo-placeholder {
     grid-column: 1 / -1;
     display: flex;
@@ -789,18 +803,17 @@ h1, h2, h3, h4, h5 {
     border-color: var(--gold);
 }
 
-.photo-grid img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border: 1px solid var(--border);
-    transition: transform var(--transition), border-color var(--transition);
-    cursor: pointer;
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.photo-grid img:hover {
-    transform: scale(1.02);
-    border-color: var(--gold);
+@media (max-width: 480px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* --- Contact Section ------------------------------------ */
@@ -1051,10 +1064,6 @@ h1, h2, h3, h4, h5 {
         gap: 32px;
     }
 
-    /* Photo grid */
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     /* Product cards */
     .product-card-header,
