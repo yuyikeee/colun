@@ -559,6 +559,62 @@ h1, h2, h3, h4, h5 {
     font-style: italic;
 }
 
+.element-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 16px;
+}
+
+.element-glyph {
+    position: relative;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.element-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+    opacity: 0.5;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.element-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+    gap: 2px;
+}
+
+.element-name {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    color: currentColor;
+}
+
+.element-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    font-weight: 300;
+}
+
+.element-mark:hover .element-icon { opacity: 1; transform: scale(1.12); }
+
+.element-mark.element-wood { color: #8bab6e; }
+.element-mark.element-water { color: #7fa6c9; }
+.element-mark.element-metal { color: #c2c7ce; }
+.element-mark.element-earth { color: #b8956a; }
+.element-mark.element-fire { color: #c9705a; }
+
 .product-card-body {
     padding: 32px 40px 40px;
 }
