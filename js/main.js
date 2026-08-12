@@ -260,6 +260,20 @@ var galleryData = {
         subGalleries: [
             { id: 'cb', label: 'All Fabrics', dir: 'classic-blend' }
         ]
+    },
+    'ember': {
+        title: '暖绒·Ember — Fabric Gallery',
+        tabs: false,
+        subGalleries: [
+            { id: 'ember', label: 'All Fabrics', dir: 'ember' }
+        ]
+    },
+    'lustre': {
+        title: '澄光·Lustre — Fabric Gallery',
+        tabs: false,
+        subGalleries: [
+            { id: 'lustre', label: 'All Fabrics', dir: 'lustre' }
+        ]
     }
 };
 
@@ -286,12 +300,14 @@ var galleryImageCounts = {
     'four-seasons-excellence': 13,
     'four-seasons-flannel': 7,
     'four-seasons-cashmere': 6,
-    'four-seasons-superfine': 9,
+    'four-seasons-superfine': 12,
     'wool-silk-linen': 9,
     'high-twist-stretch': 7,
     'wool-poly': 45,
     'business': 0,
-    'classic-blend': 47
+    'classic-blend': 47,
+    'ember': 5,
+    'lustre': 5
 };
 
 // --- Open Gallery -------------------------------------------
@@ -301,6 +317,7 @@ function openGallery(galleryId) {
 
     galleryTitle.textContent = data.title;
     galleryTabs.innerHTML = '';
+    galleryTabs.style.display = '';
 
     if (data.tabs && data.subGalleries.length > 1) {
         // Render tabs
