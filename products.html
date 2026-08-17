@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Colun's premium worsted wool fabric collections — from classic pure wool to innovative natural fiber blends.">
+    <title>Our Collections — Colun Premium Fabrics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .products-layout {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        .products-sidebar {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 280px;
+            height: calc(100vh - 80px);
+            background: #0d0d0d;
+            border-right: 1px solid #2a2a2a;
+            padding: 3rem 0;
+            overflow-y: auto;
+            z-index: 100;
+        }
+        .products-sidebar h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #c9a96e;
+            padding: 0 2rem;
+            margin-bottom: 2rem;
+        }
+        .sidebar-nav {
+            list-style: none;
+        }
+        .sidebar-nav li {
+            margin: 0;
+        }
+        .sidebar-nav a {
+            display: block;
+            padding: 1rem 2rem;
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            color: #c9a96e;
+            background: rgba(201, 169, 110, 0.05);
+            border-left-color: #c9a96e;
+        }
+        .sidebar-nav .series-name {
+            display: block;
+            font-weight: 500;
+        }
+        .sidebar-nav .series-subtitle {
+            display: block;
+            font-size: 0.8rem;
+            color: #787878;
+            margin-top: 0.25rem;
+        }
+        .products-main {
+            margin-left: 280px;
+            flex: 1;
+            padding: 3rem 4rem;
+        }
+        .products-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        .products-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #c9a96e;
+            margin-bottom: 1rem;
+        }
+        .products-header p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .series-card {
+            background: #151515;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            scroll-margin-top: 100px;
+        }
+        .series-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.25rem;
+            color: #c9a96e;
+            margin-bottom: 0.5rem;
+        }
+        .series-card .subtitle {
+            font-size: 1rem;
+            color: #787878;
+            margin-bottom: 2rem;
+        }
+        .series-card .description {
+            font-size: 1rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .series-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #1a1a1a;
+            border-radius: 4px;
+        }
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .spec-label {
+            font-size: 0.8rem;
+            color: #787878;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .spec-value {
+            font-size: 0.95rem;
+            color: #c9a96e;
+            font-weight: 500;
+        }
+        .series-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 1024px) {
+            .products-sidebar {
+                display: none;
+            }
+            .products-main {
+                margin-left: 0;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">Our Story</a></li>
+                <li><a href="products.html" class="nav-link active">Products</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="products-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="products-sidebar">
+            <h2>Collections</h2>
+            <ul class="sidebar-nav">
+                <li><a href="#solstice">
+                    <span class="series-name">四时锦·Solstice</span>
+                    <span class="series-subtitle">Super 110s–150s</span>
+                </a></li>
+                <li><a href="#aether">
+                    <span class="series-name">云裳·Aether</span>
+                    <span class="series-subtitle">Wool-Silk-Linen</span>
+                </a></li>
+                <li><a href="#tempest">
+                    <span class="series-name">凌风·Tempest</span>
+                    <span class="series-subtitle">4-Ply High-Twist</span>
+                </a></li>
+                <li><a href="#perennial">
+                    <span class="series-name">恒锦·Perennial</span>
+                    <span class="series-subtitle">Wool-Polyester</span>
+                </a></li>
+                <li><a href="#ember">
+                    <span class="series-name">暖绒·Ember</span>
+                    <span class="series-subtitle">Super 150s Flannel</span>
+                </a></li>
+                <li><a href="#elyra">
+                    <span class="series-name">流光·Elyra</span>
+                    <span class="series-subtitle">3-Ply Bi-Stretch</span>
+                </a></li>
+                <li><a href="#irida">
+                    <span class="series-name">霓裳·Irida</span>
+                    <span class="series-subtitle">Biella-Finish</span>
+                </a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="products-main">
+            <div class="products-header">
+                <h1>Our Collections</h1>
+                <p>Seven distinct fabric series, each designed to meet specific tailoring needs — from classic worsted wool to innovative natural fiber blends.</p>
+            </div>
+
+            <!-- Solstice -->
+            <section class="series-card" id="solstice">
+                <h2>四时锦·Solstice</h2>
+                <p class="subtitle">Super 110s–150s Pure Wool & Cashmere Blends</p>
+                <p class="description">Our flagship collection. From the smooth finish of Super 150s Wool Superfine to the luxurious hand of Super 130s Wool Cashmere, each fabric is engineered for impeccable drape and comfort. Available in worsted smooth wool, light-nap, and full-nap flannel finishes to suit seasonal tailoring.</p>
+                <div class="series-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Material</span>
+                        <span class="spec-value">100% Wool / Wool-Cashmere</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Weight</span>
+                        <span class="spec-value">270–335 g/m</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Width</span>
+                        <span class="spec-value">150 cm</span>
+                    </div>
+                </div>
+                <div class="series-actions">
+                    <a href="series/solstice.html" class="btn btn-learn-more" style="text-decoration: none;">Learn More</a>
+                    <button class="btn btn-gallery" data-gallery="four-seasons">View Fabric Gallery</button>
+                </div>
+            </section>
+
+            <!-- Aether -->
+            <section class="series-card" id="aether">
+                <h2>云裳·Aether</h2>
+                <p class="subtitle">Wool · Silk · Linen Natural Fiber Blends</p>
+                <p class="description">A refined fusion of virgin wool, mulberry silk, and fine linen. Breathable yet structured — ideal for summer blazers, lightweight suits, and resort collections. The subtle luster of silk meets the crisp hand of linen in patterns ranging from understated plains to sophisticated checks and herringbones.</p>
+                <div class="series-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Material</span>
+                        <span class="spec-value">Wool-Silk-Linen Blends</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Weight</span>
+                        <span class="spec-value">265–285 g/m</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Width</span>
+                        <span class="spec-value">150 cm</span>
+                    </div>
+                </div>
+                <div class="series-actions">
+                    <a href="series/aether.html" class="btn btn-learn-more" style="text-decoration: none;">Learn More</a>
+                    <button class="btn btn-gallery" data-gallery="wool-silk-linen">View Fabric Gallery</button>
+                </div>
+            </section>
+
+            <!-- Tempest -->
+            <section class="series-card" id="tempest">
+                <h2>凌风·Tempest</h2>
+                <p class="subtitle">4-Ply High-Twist Wrinkle-Resistant Stretch</p>
+                <p class="description">Engineered with a proprietary four-ply high-twist yarn construction. The fabric resists wrinkles naturally while providing exceptional stretch and recovery — no synthetic elastane needed. With a substantial 380 g/m weight, it drapes beautifully and holds its shape through the longest days. Ten core colors in plains, plus coordinated stripes, checks, and mini patterns.</p>
+                <div class="series-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Material</span>
+                        <span class="spec-value">100% Virgin Wool</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Weight</span>
+                        <span class="spec-value">380 g/m</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Width</span>
+                        <span class="spec-value">145 cm</span>
+                    </div>
+                </div>
+                <div class="series-actions">
+                    <a href="series/tempest.html" class="btn btn-learn-more" style="text-decoration: none;">Learn More</a>
+                    <button class="btn btn-gallery" data-gallery="high-twist-stretch">View Fabric Gallery</button>
+                </div>
+            </section>
+
+            <!-- Perennial -->
+            <section class="series-card" id="perennial">
+                <h2>恒锦·Perennial</h2>
+                <p class="subtitle">70% Wool · 30% Polyester Performance Blend</p>
+                <p class="description">The workhorse of any suiting collection. A carefully balanced blend that marries the natural breathability and hand of wool with the durability and crease-resistance of polyester. Over 50 SKUs spanning a comprehensive color palette — from classic navy and charcoal to seasonal fashion tones. The ideal choice for corporate uniforms, entry-level luxury, and high-volume production runs.</p>
+                <div class="series-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Material</span>
+                        <span class="spec-value">70% Wool · 30% Polyester</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Weight</span>
+                        <span class="spec-value">250–330 g/m</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Width</span>
+                        <span class="spec-value">150 cm</span>
+                    </div>
+                </div>
+                <div class="series-actions">
+                    <a href="series/perennial.html" class="btn btn-learn-more" style="text-decoration: none;">Learn More</a>
+                    <button class="btn btn-gallery" data-gallery="wool-poly">View Fabric Gallery</button>
+                </div>
+            </section>
+
+            <!-- Ember -->
+            <section class="series-card" id="ember">
+                <h2>暖绒·Ember</h2>
+                <p class="subtitle">Super 150s Wool Superfine · Brushed Finish</p>
+                <p class="description">A refined Super150s wool superfine with a soft brushed finish. At 385 g/m and 150 cm wide, 暖绒·Ember brings warmth, depth, and a gentle tactile surface to tailored winter garments.</p>
+                <div class="series-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Material</span>
+                        <span class="spec-value">100% Wool Super 150s</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Weight</span>
+                        <span class="spec-value">385 g/m</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Width</span>
+                        <span class="spec-value">150 cm</span>
+                    </div>
+                </div>
+                <div class="series-actions">
+                    <a href="series/ember.html" class="btn btn-learn-more" style="text-decoration: none;">Learn More</a>
+                    <button class="btn btn-gallery" data-gallery="ember">View Fabric Gallery</button>
+                </div>
+            </section>
+
+            <!-- Elyra -->
+            <section class="series-card" id="elyra">
+                <h2>流光·Elyra</h2>
+                <p class="subtitle">3-Ply Natural Bi-Stretch · Wrinkle-Resistant</p>
+                <p class="description">A lustrous Super110s wool superfine with exceptional stretch and wrinkle resistance. More elastic than our Tempest collection, 流光·Elyra recovers beautifully after movement while maintaining a refined surface for polished, comfortable tailoring.</p>
+                <div class="series-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Material</span>
+                        <span class="spec-value">100% Wool</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Weight</span>
+                        <span class="spec-value">315 g/m</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Width</span>
+                        <span class="spec-value">148 cm</span>
+                    </div>
+                </div>
+                <div class="series-actions">
+                    <a href="series/elyra.html" class="btn btn-learn-more" style="text-decoration: none;">Learn More</a>
+                    <button class="btn btn-gallery" data-gallery="lustre">View Fabric Gallery</button>
+                </div>
+            </section>
+
+            <!-- Irida -->
+            <section class="series-card" id="irida">
+                <h2>霓裳·Irida</h2>
+                <p class="subtitle">Italian Biella-Finish · Return to True Value</p>
+                <p class="description">Proprietary Italian BIELLA-FINISH technology recreates refined Italian suiting texture — crisp, resilient, wrinkle-resistant. Fine-denier fibers create natural light diffusion with elegant matte luster. Machine-washable with excellent color fastness and durability.</p>
+                <div class="series-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Material</span>
+                        <span class="spec-value">70% Wool · 30% Polyester</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Weight</span>
+                        <span class="spec-value">280 g/m</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Width</span>
+                        <span class="spec-value">150 cm</span>
+                    </div>
+                </div>
+                <div class="series-actions">
+                    <a href="series/irida.html" class="btn btn-learn-more" style="text-decoration: none;">Learn More</a>
+                    <button class="btn btn-gallery" data-gallery="classic-blend">View Fabric Gallery</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Sidebar active state based on scroll position
+        const sections = document.querySelectorAll('.series-card');
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
