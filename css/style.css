@@ -1219,7 +1219,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Outline Button (Learn More) */
-.btn-outline {
+.btn-learn-more {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 28px;
@@ -1234,7 +1234,7 @@ h1, h2, h3, h4, h5 {
     transition: all var(--transition);
 }
 
-.btn-outline:hover {
+.btn-learn-more:hover {
     background: transparent;
     color: var(--gold);
 }
