@@ -395,6 +395,26 @@
         </main>
     </div>
 
+    <!-- Gallery Overlay -->
+    <div class="gallery-overlay" id="galleryOverlay">
+        <div class="gallery-backdrop"></div>
+        <div class="gallery-panel">
+            <button class="gallery-close" id="galleryClose">&times;</button>
+            <h2 class="gallery-title" id="galleryTitle"></h2>
+            <div class="gallery-tabs" id="galleryTabs"></div>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox (full-screen image viewer) -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&lsaquo;</button>
+        <img src="" alt="" id="lightboxImg">
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">&rsaquo;</button>
+        <p class="lightbox-counter" id="lightboxCounter"></p>
+    </div>
+
     <script src="js/main.js"></script>
     <script>
         // Sidebar active state based on scroll position
