@@ -1218,6 +1218,27 @@ h1, h2, h3, h4, h5 {
     color: #0d0d0d;
 }
 
+/* Outline Button (Learn More) */
+.btn-outline {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: var(--gold);
+    color: #0d0d0d;
+    border: 1px solid var(--gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.btn-outline:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
 /* Gallery Overlay */
 .gallery-overlay {
     position: fixed;
