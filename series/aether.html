@@ -10,22 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <style>
+        body { background-color: #0d0d0d; }
         .series-hero { min-height: 60vh; background: linear-gradient(135deg, #2b4560 0%, #3d5a7a 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; }
         .series-hero-content h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #c9a96e; margin-bottom: 1rem; }
         .series-hero-content .subtitle { font-size: 1.25rem; color: #d4c5a9; margin-bottom: 2rem; }
-        .series-content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+        .series-content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; background-color: #0d0d0d; }
         .series-section { margin-bottom: 3rem; }
-        .series-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #2c2416; margin-bottom: 1rem; border-bottom: 2px solid #c9a96e; padding-bottom: 0.5rem; }
-        .series-section h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #3d3424; margin: 2rem 0 1rem; }
-        .series-section p, .series-section li { line-height: 1.8; color: #555; margin-bottom: 1rem; }
+        .series-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #c9a96e; margin-bottom: 1rem; border-bottom: 2px solid #c9a96e; padding-bottom: 0.5rem; }
+        .series-section h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #d4b87a; margin: 2rem 0 1rem; }
+        .series-section p, .series-section li { line-height: 1.8; color: #b0b0b0; margin-bottom: 1rem; }
         .series-section ul { list-style: none; padding-left: 0; }
         .series-section ul li::before { content: "• "; color: #c9a96e; font-weight: bold; margin-right: 0.5rem; }
         .back-link { display: inline-block; margin-bottom: 2rem; color: #c9a96e; text-decoration: none; font-weight: 500; }
         .back-link:hover { text-decoration: underline; }
-        .fiber-card { background: #f9f6f0; padding: 1.5rem; margin: 1rem 0; border-left: 4px solid #c9a96e; border-radius: 4px; }
+        .fiber-card { background: #1a1a1a; padding: 1.5rem; margin: 1rem 0; border-left: 4px solid #c9a96e; border-radius: 4px; }
+        .fiber-card h3 { color: #c9a96e; }
+        .fiber-card p { color: #b0b0b0; }
+        .fiber-card strong { color: #d4b87a; }
         .blend-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .blend-item { background: #fafaf8; padding: 1.5rem; border-radius: 8px; border: 1px solid #e8e4d8; }
-        .blend-item h4 { color: #2c2416; margin-bottom: 0.5rem; }
+        .blend-item { background: #1a1a1a; padding: 1.5rem; border-radius: 8px; border: 1px solid #2a2a2a; }
+        .blend-item h4 { color: #c9a96e; margin-bottom: 0.5rem; }
+        .blend-item p { color: #b0b0b0; }
     </style>
 </head>
 <body>
@@ -52,7 +57,7 @@
     </section>
 
     <div class="series-content">
-        <a href="../index.html#products" class="back-link">← Back to Products</a>
+        <a href="../index.html#prod-aether" class="back-link">← Back to Products</a>
 
         <div class="series-section">
             <h2>Series Introduction</h2>
