@@ -269,7 +269,7 @@ var galleryData = {
         ]
     },
     'lustre': {
-        title: '澄光·Lustre — Fabric Gallery',
+        title: '流光·Elyra — Fabric Gallery',
         tabs: false,
         subGalleries: [
             { id: 'lustre', label: 'All Fabrics', dir: 'lustre' }
