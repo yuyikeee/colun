@@ -1,6 +1,6 @@
 /* ============================================================
    Colun — Premium Worsted Wool Fabrics
-   JavaScript: Navigation, Animations, Form Handling
+   JavaScript: Navigation, Animations, Form Handling, Accordion Gallery
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -12,6 +12,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
     const allNavLinks = document.querySelectorAll('.nav-link');
+
+    // --- Accordion Gallery -----------------------------------
+    const accordionGalleries = document.querySelectorAll('.accordion-gallery');
+
+    accordionGalleries.forEach(gallery => {
+        const items = gallery.querySelectorAll('.accordion-item');
+        const defaultIndex = parseInt(gallery.getAttribute('data-default')) || 1;
+
+        // Set default active item
+        if (items[defaultIndex]) {
+            items[defaultIndex].classList.add('active');
+        }
+
+        // Add click/hover handlers
+        items.forEach((item, index) => {
+            item.addEventListener('mouseenter', () => {
+                items.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+
+            item.addEventListener('click', () => {
+                items.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    });
 
     // --- Navbar scroll effect --------------------------------
     function updateNavbar() {
